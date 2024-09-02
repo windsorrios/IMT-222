@@ -1,0 +1,15 @@
+//https://wokwi.com/projects/406433227478745089
+int LED = 11;
+int pulsador = 11; 
+int estado;
+void setup() {
+pinMode(LED,OUTPUT);
+pinMode(pulsador,INPUT_PULLUP);
+estado=0;
+}
+void loop() {
+while(digitalRead(pulsador)==HIGH);
+estado = digitalRead(LED);
+digitalWrite(LED,!estado);
+while(digitalRead(pulsador)==LOW);
+}
